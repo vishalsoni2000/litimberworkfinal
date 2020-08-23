@@ -1,0 +1,142 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site/application.
+// -----------------------------------------------------------------------------
+/*--- footer ---*/
+
+footer {
+	width: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	padding-top: 50px;
+
+	@include breakpoint(992px) {
+		padding-top: 30px;
+	}
+	@include breakpoint(640px) {
+		padding-top: 23px;
+	}
+
+	&:before {
+		position: absolute;
+		content: '';
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+		background: #36362c;
+		opacity: 0.8;
+	}
+
+	.right-part {
+		#sbi_mod_error {
+			margin-top: 0;
+			height: 100%;
+			border-radius: 0;
+		}
+		.widget_instagram-feed-widget {
+			height: 400px;
+			width: 240px;
+			margin: auto;
+		}
+		.widget_fbw_id {
+			display: flex;
+			justify-content: center;
+		}
+	}
+
+	.contact-part {
+			a, h5, p {
+				font-size: 15px;
+    		color: color('brand-secondary');
+				margin: 0;
+				line-height: 1.7;
+				font-family: $font-base;
+	    	display: inline-block;
+		    // padding-left: 15px;
+				position: relative;
+			}
+			p, h5 {
+				padding-left: 30px;
+			}
+			a:hover {
+				color: color('brand-primary');
+			}
+			h5, p.call {
+				&:before {
+					position: absolute;
+					content: '';
+					left: 0;
+					top: 5px;
+					width: 20px;
+					height: 20px;
+					background-position: center;
+					background-repeat: no-repeat;
+				}
+			}
+			h5:before {
+				background-image: url('../../images/footer-add.png');
+			}
+			p.call:before {
+				background-image: url('../../images/footer-call.png');
+			}
+	}
+
+	.footer-menu {
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			li {
+				padding-top: 2px;
+				padding-left: 30px;
+				position: relative;
+
+				@include breakpoint(992px) {
+					text-align: center;
+					padding-left: 0;
+				}
+
+				&:before {
+					position: absolute;
+					content: '⯈';
+					left: 0;
+					top: 50%;
+					transform: translateY(-50%);
+					font-size: 16px;
+					font-weight: bold;
+					color: color('brand-secondary');
+					@include breakpoint(992px) {
+						display: none;
+					}
+				}
+			}
+		}
+
+		a {
+			font-size: 15px;
+			color: color('brand-secondary');
+
+			&:hover {
+				color: color('brand-primary');
+			}
+		}
+
+		li.current_page_item a,
+		li.current-menu-item a {
+			color: color('brand-primary');
+		}
+	}
+}
+
+.copyright-block {
+	.copyright, a {
+		color: color('brand-secondary');
+		font-size: 14px;
+		margin: 0;
+    line-height: 1.6;
+	}
+	a:hover {
+			color: color('brand-primary');
+	}
+}

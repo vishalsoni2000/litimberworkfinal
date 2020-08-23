@@ -1,0 +1,28 @@
+@import
+	"abstracts/variables",
+	"abstracts/mixins";
+
+.service-section {
+	padding-bottom: 100px;
+	@include breakpoint(1200px) {
+		padding-bottom: 50px;
+	}
+	@include breakpoint(992px) {
+		padding-bottom: 30px;
+	}
+	.right-part {
+		@include breakpoint(992px) {
+			display: none;
+		}
+		img {
+			position: absolute;
+			top: 0;
+			right: -100px;
+			width: 55%;
+			@include breakpoint(1200px) {
+				width: 45%;
+				right: 10px;
+			}
+		}
+	}
+}

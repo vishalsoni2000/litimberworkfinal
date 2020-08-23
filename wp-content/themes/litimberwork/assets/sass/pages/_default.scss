@@ -1,0 +1,193 @@
+// -----------------------------------------------------------------------------
+// When having several themes, this file contains everything related to the
+// default one.
+// -----------------------------------------------------------------------------
+/**
+ * Main content containers
+ */
+body,
+html {
+    height: 100%;
+    border: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    -webkit-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    font-family: $font-base;
+}
+
+#wrapper {
+    width: 100%;
+    flex: 1 0 auto;
+    padding-top: 0px;
+    transition: 0.5s ease all;
+}
+
+// #content-area {
+//   overflow-x: hidden;
+// }
+
+.wrapper {
+    max-width: 100%;
+    width: $wrapper-width;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 0 15px;
+	&-fluid {
+		@extend .cell-12 ;
+	}
+}
+/** slick slider pagination */
+
+.slick-dots {
+    margin: 0;
+    padding: 0;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+
+    li {
+        width: 20px;
+        height: 20px;
+        background: color('black');
+        border-radius: 100%;
+        margin: 0 5px;
+        list-style: none;
+        cursor: pointer;
+        opacity: 0.48;
+
+        &.slick-active {
+            opacity: 1;
+        }
+
+        button {
+            display: none;
+        }
+    }
+}
+
+.slick-dots {
+    &--primary {
+        .slick-dots {
+            li {
+                background: color('brand-primary');
+            }
+        }
+    }
+
+    &--secondary {
+        .slick-dots {
+            li {
+                background: color('brand-secondary');
+            }
+        }
+    }
+
+    &--white {
+        .slick-dots {
+            li {
+                background: color('white');
+            }
+        }
+    }
+}
+
+.entry .slick-dots li {
+    margin: 0 5px;
+}
+
+.slick-arrow {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    transition: 0.5s ease all;
+    -o-transition: 0.5s ease all;
+    -webkit-transition: 0.5s ease all;
+    width: 48px;
+    height: 48px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+    cursor: pointer;
+    border: 0;
+    font-size: 24px;
+    border-radius: 100%;
+    background: color('black');
+    color: color('white');
+    z-index: 1;
+
+    &:hover {
+        background: lighten(color('black'), 20%);
+    }
+    @include breakpoint(992px) {
+        width: 42px;
+        height: 42px;
+        font-size: 20px;
+    }
+    @include breakpoint(767px) {
+        width: 32px;
+        height: 32px;
+        font-size: 18px;
+    }
+    @include breakpoint(767px) {
+        width: 28px;
+        height: 28px;
+        font-size: 16px;
+    }
+}
+
+.slick-prev {
+    left: 0;
+}
+
+.slick-next {
+    right: 0;
+}
+
+.slick-initialized .slick-slide {
+    outline: 0;
+}
+/** slick arrow primary */
+
+.slick-arrow--primary {
+    .slick-next,
+    .slick-prev {
+        background: color('brand-primary');
+        color: color('white');
+
+        &:hover {
+            background: lighten(color('brand-primary'), 10%);
+            color: color('white');
+        }
+    }
+}
+
+.slick-arrow--secondary {
+    .slick-next,
+    .slick-prev {
+        background: color('brand-secondary');
+        color: color('white');
+
+        &:hover {
+            background: lighten(color('brand-secondary-light'), 10%);
+            color: color('white');
+        }
+    }
+}
+
+@include breakpoint(359px) {
+    .g-recaptcha {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        > div {
+            -webkit-transform: scale(0.82);
+            -ms-transform: scale(0.82);
+            -o-transform: scale(0.82);
+            transform: scale(0.82);
+        }
+    }
+}

@@ -1,0 +1,26 @@
+@import
+	"abstracts/variables",
+	"abstracts/mixins";
+
+.process-list {
+  ul {
+    li {
+			padding-bottom: 30px;
+			@include breakpoint(992px) {
+				padding-bottom: 10px;
+			}
+			@include breakpoint(640px) {
+				&:last-child {
+					padding-bottom: 0;
+				}
+			}
+      .process-image {
+          padding-top: 65%;
+      }
+			.single-list {
+				max-width: 500px;
+				margin: auto;
+			}
+    }
+  }
+}

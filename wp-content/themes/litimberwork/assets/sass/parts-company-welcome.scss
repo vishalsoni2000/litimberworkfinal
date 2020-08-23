@@ -1,0 +1,30 @@
+@import
+	"abstracts/variables",
+	"abstracts/mixins";
+
+.company-welcome {
+  overflow: hidden;
+	border-bottom: 2px solid color('brand-primary');
+
+  .welcome-content {
+    padding-right: 80px;
+		@include breakpoint(1366px) {
+			padding-right: 50px;
+		}
+		@include breakpoint(992px) {
+			padding-right: 0;
+		}
+  }
+
+  .welcome-image {
+    width: 50%;
+    padding-bottom: 50px;
+    height: 100%;
+    .innbaner {
+      padding-top: 70%;
+			@include breakpoint(1366px) {
+				padding-top: 100%;
+			}
+    }
+  }
+}
